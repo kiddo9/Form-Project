@@ -1,7 +1,7 @@
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import Axios from 'axios';
+//import Axios from 'axios';
 import * as Yup from 'yup';
 
 const SignupSchema = Yup.object().shape({
@@ -25,20 +25,20 @@ function Signup() {
 
     const Redirect = useNavigate();
 
-      const HandleSignup = async (values, {setSubmitting}) => {
-        await Axios.post('http://localhost:5000/SignUp', values)
-        .then(response => {
-            console.log(response.data);
-            Redirect('/');
+      const HandleSignup = () => {
+        // await Axios.post('http://localhost:5000/SignUp', values)
+        // .then(response => {
+        //     console.log(response.data);
+        //     Redirect('/');
             
-        })
-        .catch(error => {
-            console.error('Error: ', error)
-        })
-        .finally(() => {
-            setSubmitting(false)
-        });
-         
+        // })
+        // .catch(error => {
+        //     console.error('Error: ', error)
+        // })
+        // .finally(() => {
+        //     setSubmitting(false)
+        // });
+        Redirect('/');
      };
 
   return (
